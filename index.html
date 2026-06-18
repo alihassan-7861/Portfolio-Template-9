@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amine — Computer Science Student &amp; Software Developer</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+      <div class="container-fluid px-4 px-md-5">
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul
+            class="navbar-nav mx-auto gap-lg-5 gap-2 text-center"
+            id="navLinks"
+          >
+            <!-- rendered by JS from NAV_LINKS -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============ SECTION 1 — HERO ============ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-text" aria-hidden="true">HI, I'M AMINE</div>
+
+      <div class="hero-content">
+        <div class="hero-portrait-wrap">
+          <img
+            src="portrait.png"
+            alt="Portrait illustration"
+            class="hero-portrait"
+            id="heroPortrait"
+            data-pos="center"
+            data-load-stagger
+          />
+        </div>
+
+        <div class="hero-bottom container-fluid px-4 px-md-5">
+          <div class="row align-items-end">
+            <div class="col-lg-6">
+              <p class="hero-bio" id="heroBio" data-load-stagger>
+                Computer Science student &amp; software developer building
+                practical, modern applications.
+              </p>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-lg-end mt-3 mt-lg-0">
+              <a
+                href="#contact"
+                class="pill-btn glow-btn"
+                id="heroContactBtn"
+                data-load-stagger
+              >
+                Contact Me
+                <button
+                  class="mute-btn-inline"
+                  id="muteToggle"
+                  aria-label="Toggle sound"
+                >
+                  <!-- <svg
+                    id="muteIcon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  > -->
+                    <polygon
+                      points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+                    ></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ZONE (between hero + about, scroll-driven) ============ -->
+    <div class="ticker-pin" id="tickerPin">
+      <div class="ticker-sticky">
+        <div class="ticker-row" id="tickerRow1"></div>
+        <div class="ticker-row" id="tickerRow2"></div>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 2 — ABOUT ME ============ -->
+    <section id="about" class="about-section">
+      <!-- 4 decorative 3D-style glow icons — moon / cube / smiley / cursor -->
+      <div class="deco-icon deco-tl reveal-left">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="moonG" cx="40%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#7ee8fa" />
+              <stop offset="60%" stop-color="#2563eb" />
+              <stop offset="100%" stop-color="#0a0060" />
+            </radialGradient>
+          </defs>
+          <circle cx="40" cy="40" r="36" fill="url(#moonG)" opacity=".15" />
+          <path
+            d="M50 20 a22 22 0 1 0 0 40 18 18 0 1 1 0-40z"
+            fill="url(#moonG)"
+          />
+          <path
+            d="M50 20 a22 22 0 1 0 0 40 18 18 0 1 1 0-40z"
+            fill="none"
+            stroke="#7ee8fa"
+            stroke-width="1"
+            opacity=".5"
+          />
+        </svg>
+      </div>
+      <div class="deco-icon deco-tr reveal-right">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cubeG1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#c084fc" />
+              <stop offset="100%" stop-color="#7c3aed" />
+            </linearGradient>
+            <linearGradient id="cubeG2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7c3aed" />
+              <stop offset="100%" stop-color="#3b0764" />
+            </linearGradient>
+          </defs>
+          <!-- top face -->
+          <polygon
+            points="40,10 65,24 40,38 15,24"
+            fill="#c084fc"
+            opacity=".9"
+          />
+          <!-- right face -->
+          <polygon points="40,38 65,24 65,56 40,70" fill="url(#cubeG1)" />
+          <!-- left face -->
+          <polygon points="40,38 15,24 15,56 40,70" fill="url(#cubeG2)" />
+          <!-- edges -->
+          <polygon
+            points="40,10 65,24 40,38 15,24"
+            fill="none"
+            stroke="#e9d5ff"
+            stroke-width="1"
+            opacity=".6"
+          />
+          <polygon
+            points="40,38 65,24 65,56 40,70"
+            fill="none"
+            stroke="#c084fc"
+            stroke-width="1"
+            opacity=".4"
+          />
+          <polygon
+            points="40,38 15,24 15,56 40,70"
+            fill="none"
+            stroke="#a855f7"
+            stroke-width="1"
+            opacity=".4"
+          />
+        </svg>
+      </div>
+      <div class="deco-icon deco-bl reveal-left" style="--delay: 0.25s">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="smileyG" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#f472b6" />
+              <stop offset="100%" stop-color="#7c3aed" />
+            </radialGradient>
+          </defs>
+          <circle
+            cx="40"
+            cy="40"
+            r="32"
+            fill="none"
+            stroke="url(#smileyG)"
+            stroke-width="3.5"
+          />
+          <circle cx="40" cy="40" r="32" fill="#1a0030" opacity=".5" />
+          <!-- eyes -->
+          <circle cx="28" cy="34" r="3.5" fill="#f472b6" />
+          <circle cx="52" cy="34" r="3.5" fill="#f472b6" />
+          <!-- smile -->
+          <path
+            d="M26 48 q14 14 28 0"
+            fill="none"
+            stroke="#f472b6"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <!-- glow ring -->
+          <circle
+            cx="40"
+            cy="40"
+            r="35"
+            fill="none"
+            stroke="#a855f7"
+            stroke-width="1"
+            opacity=".3"
+          />
+        </svg>
+      </div>
+      <div class="deco-icon deco-br reveal-right" style="--delay: 0.25s">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cursorG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#818cf8" />
+              <stop offset="100%" stop-color="#4f46e5" />
+            </linearGradient>
+          </defs>
+          <!-- cursor arrow -->
+          <polygon
+            points="18,12 18,62 32,48 42,68 52,64 42,44 58,44"
+            fill="url(#cursorG)"
+          />
+          <polygon
+            points="18,12 18,62 32,48 42,68 52,64 42,44 58,44"
+            fill="none"
+            stroke="#818cf8"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            opacity=".7"
+          />
+          <!-- glow circle -->
+          <circle
+            cx="40"
+            cy="40"
+            r="36"
+            fill="none"
+            stroke="#818cf8"
+            stroke-width="1"
+            opacity=".2"
+          />
+        </svg>
+      </div>
+
+      <div class="container text-center about-inner">
+        <h2 class="gradient-heading reveal-up" id="aboutHeading">ABOUT ME</h2>
+        <p class="about-text reveal-up" id="aboutText" style="--delay: 0.15s">
+          I am a Computer Science student at USTHB passionate about software
+          development and problem-solving. I enjoy building practical
+          applications, exploring new technologies, and continuously improving
+          my programming skills.
+        </p>
+        <a
+          href="#contact"
+          class="pill-btn glow-btn reveal-up"
+          id="aboutContactBtn"
+          style="--delay: 0.3s"
+          >Contact Me</a
+        >
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3 — SKILLS ============ -->
+    <section id="skills" class="skills-section">
+      <div class="container text-center mb-5">
+        <h2 class="gradient-heading reveal-up">SKILLS</h2>
+      </div>
+      <div class="skills-ticker-zone">
+        <div class="ticker-row skills-row" id="skillsRow1"></div>
+        <div class="ticker-row skills-row" id="skillsRow2"></div>
+        <div class="ticker-row skills-row" id="skillsRow3"></div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 — SERVICES ============ -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="gradient-heading text-center mb-5">SERVICES</h2>
+        <div id="servicesList" class="services-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 — PROJECTS ============ -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="gradient-heading text-center mb-5">PROJECTS</h2>
+        <div id="projectsList"></div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6 — CONTACT / FOOTER ============ -->
+    <section id="contact" class="contact-section">
+      <div class="container text-center">
+        <h2 class="gradient-heading reveal-up" id="contactHeading">
+          LET'S BUILD<br />SOMETHING AMAZING
+        </h2>
+        <div
+          class="contact-cta-row reveal-up"
+          id="contactCtaRow"
+          style="--delay: 0.15s"
+        >
+          <a
+            href="mailto:aminechamzeoui1925@gmail.com"
+            class="pill-btn glow-btn"
+            >Get In Touch</a
+          >
+          <div class="contact-email">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span>aminechamzeoui1925@gmail.com</span>
+          </div>
+        </div>
+
+        <div
+          class="social-row reveal-up"
+          id="socialRow"
+          style="--delay: 0.3s"
+        ></div>
+      </div>
+
+      <footer class="footer-bar container-fluid">
+        <div class="row">
+          <div class="col-6 footer-left">
+            © 2026 Amine. All rights reserved.
+          </div>
+          <div class="col-6 footer-right text-end">
+            DESIGNED &amp; DEVELOPED BY AMINE
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- floating mute button (persists across all sections) -->
+    <button class="mute-fab" id="muteFab" aria-label="Toggle background audio">
+      <svg
+        id="muteFabIcon"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+    <audio id="bgAudio" loop>
+      <source src="assets/bg-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
