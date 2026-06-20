@@ -212,18 +212,14 @@ img{max-width:100%}
 /* ticker zone — PURELY scroll-driven, zero autoplay */
 .ticker-pin{
   position:relative;
-  height:120vh;   /* reduced — just enough scroll room to feel the movement */
   z-index:2;
-  margin-bottom:0;  /* flush against About section below */
+  margin-bottom:0;
+  padding:60px 0;
 }
 .ticker-sticky{
-  position:sticky;
-  top:0;
-  height:100vh;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  gap:16px;
+  gap:20px;
   overflow:hidden;
 }
 .ticker-row{
@@ -233,14 +229,13 @@ img{max-width:100%}
   /* NO animation here — transform is driven entirely by scroll JS */
 }
 .ticker-row img{
-  height:170px;object-fit:cover;
+  width:340px;
+  height:220px;
+  object-fit:cover;
   border-radius:14px;
   border:1px solid var(--line);
   flex-shrink:0;
 }
-.ticker-row img:nth-child(3n+1){width:300px}
-.ticker-row img:nth-child(3n+2){width:220px}
-.ticker-row img:nth-child(3n){width:260px;height:145px}
 
 /* ============================================================
    ABOUT SECTION
@@ -304,9 +299,9 @@ img{max-width:100%}
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:var(--radius-full);
-  padding:9px 16px;
+  padding:13px 24px;
   font-weight:600;
-  font-size:.82rem;
+  font-size: 1rem;
   white-space:nowrap;
   flex-shrink:0;
   cursor:default;
@@ -318,12 +313,12 @@ img{max-width:100%}
   box-shadow:0 0 16px var(--violet-mid);
 }
 .skill-pill img{
-  width:18px !important;
-  height:18px !important;
-  min-width:18px !important;
-  max-width:18px !important;
-  min-height:18px !important;
-  max-height:18px !important;
+   width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  max-width:22px !important;
+  min-height:22px !important;
+  max-height:22px !important;
   object-fit:contain;
   flex-shrink:0;
   flex-grow:0;
@@ -471,12 +466,12 @@ img{max-width:100%}
    CONTACT SECTION
 ============================================================ */
 .contact-section{
-  padding:100px 0 100px;
+  padding:100px 0 10px;
   text-align:center;
   position:relative;
-  z-index:20;        /* sit above the sticky project cards */
-  background:var(--bg);  /* opaque so it covers the cards cleanly */
-  margin-top:60px;   /* breathing room after the last sticky project */
+  z-index:20;
+  background:var(--bg);
+  margin-top:60px;
 }
 .contact-cta-row{
   display:flex;align-items:center;justify-content:center;
@@ -514,12 +509,11 @@ img{max-width:100%}
   box-shadow:0 0 18px rgba(225,48,108,.45);
 }
 .footer-bar{
-  margin-top:80px;
-  padding:28px 32px;
+  margin-top:10px;
+  padding:0px 32px;
   border-top:1px solid var(--line);
   font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-dim);
 }
-
 /* ============================================================
    RESPONSIVE
 ============================================================ */
@@ -541,7 +535,7 @@ img{max-width:100%}
   .deco-icon{width:48px;opacity:.7}
   .deco-tl,.deco-bl{left:2%}
   .deco-tr,.deco-br{right:2%}
-  .skills-row:nth-child(3){display:none} /* reduce marquee rows on small screens */
+  /* .skills-row:nth-child(3){display:none} reduce marquee rows on small screens */
   .skill-pill{
     flex-direction:row !important;
     padding:8px 14px !important;
