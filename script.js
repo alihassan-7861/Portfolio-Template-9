@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroScrollLink();
 
   // hero load-in stagger (plays once on page load, not on scroll)
-  document.querySelectorAll('.hero-content [data-load-stagger]').forEach((el, i) => {
-    el.style.setProperty('--delay', `${i * 0.18}s`);
-    el.classList.add('load-in');
-  });
+ document.querySelectorAll('#hero [data-load-stagger]').forEach((el, i) => {
+  el.style.setProperty('--delay', `${i * 0.18}s`);
+  el.classList.add('load-in');
+});
 });
