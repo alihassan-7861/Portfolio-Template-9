@@ -148,7 +148,7 @@ function renderSkills() {
   SKILLS.forEach((skill, i) => rows[i % 3].push(skill));
 
   const buildPill = (s) => `
-    <div class="skill-pill"><img src="${s.icon}" alt=""/><span>${s.name}</span></div>
+    <div class="skill-pill"><img src="${s.icon}" alt="" width="18" height="18" loading="lazy" onerror="this.style.display='none'"/><span>${s.name}</span></div>
   `;
 
   rows.forEach((rowSkills, i) => {
